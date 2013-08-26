@@ -1,9 +1,12 @@
+Note: This infusion is last updated on 2010, and I'm posting to GitHub as-is. Most components are out of date.
+If you feel like using this feel free to make push request(s), I'll gladly consider them.
+
 Advanced Mp3 Player Panel
 Version 2.2
 
 For PHP-Fusion 7.x
 Author - Arda Kilicdagi (SoulSmasher)
-Web - www.soulsmasher.net, www.soulsmasher.com
+Web - www.arda.pw
 
 USED 3RD PARTY COMPONENTS
 ------------------------------------- 
@@ -77,6 +80,3 @@ VERSION HISTORY
 	  Danish translation added (Thanks Helmuth:))
 1.1 - Playlist Behaviour And Shuffle Mode Added
 1.0 - Initial Release
-
-
-For More, click www.soulsmasher.com, www.soulsmasher.net
