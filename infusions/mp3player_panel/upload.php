@@ -35,9 +35,15 @@ if (!empty($_FILES) && strtolower(substr($_FILES['Filedata']['name'],-4))==".mp3
 	
 	// Uncomment the following line if you want to make the directory if it doesn't exist
 	// mkdir(str_replace('//','/',$targetPath), 0755, true);
+	$valid_mimetypes = array('audio/mpeg','audio/mpg','audio/mpeg3','audio/mp3');
+	if(in_array($_FILES['Filedata']['type'],$valid_mimetypes)) {
+		move_uploaded_file($tempFile,$targetFile);
+		@chmod($targetFile,0644);
+		echo '1';
+	} else {
+		echo '0';
+	}
 	
-	move_uploaded_file($tempFile,$targetFile);
-	@chmod($targetFile,0644);
+	
 }
-echo "1";
 ?>
