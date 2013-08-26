@@ -1,0 +1,82 @@
+Geliþmiþ Mp3 Player Modülü
+Versiyon 2.2
+
+PHP-Fusion 7.x Ýçindir
+Kodlama - Arda Kýlýçdaðý (SoulSmasher)
+Site: - www.soulsmasher.net, www.soulsmasher.com
+
+KULLANILAN ÜÇÜNCÜ PARTÝ BÝLEÞENLER
+------------------------------------- 
+JW FLV Media Player 4.5.203 (http://www.jeroenwijering.com/?item=JW_FLV_Player) eski stil gibi kullanýlmasý için simple skininin kaynak kodu düzenlenmiþ halde (teþekkürler pHeR-d)
+JQuery Uploadify Plugin 1.62 (www.uploadify.com) (upload.php ve javascriptinde ufak düzenlemelere gidildi)
+JQuery iColorPicker (http://www.supersite.me/website-building/jquery-free-color-picker/) (tam uyum için pek çok düzenleme yapýldý (tüm renk kodlarý 6 karakterli, # karakteri çýkmýyor vs))
+
+MEVCUT DÝLLER
+---------------------
+* Ýngilizce
+* Türkçe (Standart ve UTF-8)
+* Danimarkaca (Teþekkürler Helmuth)
+* Almanca (Teþekkürler gozoc)
+
+ÖZELLÝKLER
+----------------
+* Ajax ile dosya yükleme özelliði: bu özellik sayesinde sayfa yenilenmeden dosya yüklenebilecek, ayrýca yükleme sýrasýnda da yeni mp3ler eklenebilecek. eðer javascript kapalý ise ajaxlý yükleme modülü yerine standart mp3 yükleme formu çýkacak.
+* Ayný þekilde her iki metodla da yüklenen mp3ler admin arayüzünden silinebilecek
+* Ayarlardan mp3 playerýn geniþliði, yüksekliði,eklenebilen maksimum dosya boyutu ayarlanabiliyor. böylece geniþlik ve yükseklik deðerleri ile orta blok, yan blok vs için istediðiniz ebata ayarlanabilir
+* Mp3 playerýn tüm renkleri admin arayüzünden seçilebilecek. bunun için özel renk seçici jquery modülü mevcut. bu modül aktifken renk kodlarý sadece paletten seçilebiliyor, ve de gerçek zamanlý olarak deðerleri girdiðiniz metin alanýný seçtiðiniz renk ile renklendiriyor, ayrýca javascript tarayýcýda aktif deðilse renk kodlarý metin alaný düzenlenebilir hale geçiyor.
+* Mp3 playera ayrýca kota sýkýntýsý olanlar ya da mp3 dosyalarý baþka sunucuda olanlar için uzaktan dosya ekleme özelliði de mevcut.
+* Mp3 playlist dosyasý otomatik olarak güncellenmekte, yani her seferinde manuel olarak playlisti güncellemeye artýk gerek yok
+* Admin arayüzünden Player'ýn panelde mi olacaðý , ya da popup olarak mý açtýrýlacaðý seçilebiliyor
+* Player þarký oynatma efekti
+* Player skin (arayüz) özelliði
+* Geliþmiþ hata kontrolü ve her aþamanýn kontrolü ayrý ayrý yapýlmakta. böylece oluþabilecek hatalar karþýsýnda hatanýn ne olduðunu script size söylemekte ve de ayrýca sokulmasý olasý zararlý kodlarý/hatalý dosyalarý filtrelemekte. bu nedenle güvenilirliði yüksek bir modüldür
+
+KURULUM
+----------------
+* Files klasöründeki her þeyi fusion kök klasörünüze yükleyin
+* /infusions/mp3player_panel/songs/ klasörüne 777 CHMOD verin
+* Yönetici Paneli/Sistem Yönetimi/Modüller'den Mp3 Player ý seçip kurun
+* Yönetici Paneli/Sistem Yönetimi/Bloklar'dan mp3player_panel i istediðiniz yere ekleyin
+* Yönetici Paneli/Modüller/Mp3 Player'a gidin
+* Oradan ayarlarýnýzý ve yüklemek istediðiniz yerel ya da linki eklenecek mp3 dosyalarýný seçebilirsiniz
+* Ýyi Eðlenceler!
+
+GÜNCELLEME
+----------------
+-2.0 dan
+* Yönetici Paneli/Sistem Yönetimi/Modüller'den Mp3 Player ý seçip kur diyin. Otomatik olarak güncellenecektir
+
+- 1.1 den 2.0 a güncellemek için
+* Tüm dosyalarý ftp ye yükleyin
+* www.siteniz.com/infusions/mp3player_panel/update-11-20.php adresine bir kez týklayýn
+* Daha sonra yeþil renkle: "Update Done, now please delete this file" yazýsý çýkarsa güncelleme iþlemi baþarýlý oldu demektir, þimdi ftp den bu dosyayý silin
+
+- 1.0 dan 2.0 a güncellemek için
+* Tüm dosyalarý ftp ye yükleyin
+* www.siteniz.com/infusions/mp3player_panel/update-10-11.php adresine bir kez týklayýn
+* Daha sonra yeþil renkle: "Update Done, now please delete this file" yazýsý çýkarsa güncelleme iþlemi baþarýlý oldu demektir, þimdi ftp den bu dosyayý silin
+* www.siteniz.com/infusions/mp3player_panel/update-11-20.php adresine bir kez týklayýn
+* Daha sonra yeþil renkle: "Update Done, now please delete this file" yazýsý çýkarsa güncelleme iþlemi baþarýlý oldu demektir, þimdi ftp den bu dosyayý silin
+
+ARAYÜZ (SKIN) EKLEME
+----------------
+* Þu adrese http://www.longtailvideo.com/addons/skins ve de beðendiðiniz arayüz (skin) dosyasýný indirin
+* sýkýþtýrýlmýþ dosyanýn içindeki skin .swf dosyasýný infusions/mp3player_panel/skins klasörüne kopyalayýn
+* Modül ayarlarýndan yeni skin (arayüz) ü seçin
+
+Note: Visualization effect didn't work for me for remote mp3 files, may work for you though
+
+SÜRÜM GEÇMÝÞÝ
+----------------
+2.2 - admin panelindeki ufak bir sorun giderildi
+2.1 - playlist.php deki ufak bir bug giderildi
+	  Almanca Dili Eklendi (Teþekkürler gozoc! :))
+	  JW FLV Media 4.5.203 sürümüne güncellendi
+2.0 - Player þarký oynatma efekti eklendi
+	  Player skin (arayüz) özelliði eklendi
+	  Birkaç ufak kodlama sorunu giderildi
+	  Danimarkaca dili eklendi (Teþekkürler Helmuth:))
+1.1 - Parça listesi çalýþma metodu (sürekli çalsýn, sadece bir tur çalsýn, sadece tek þarký çalsýn), ve de parçalarý karýþýk çalma özelliði eklendi
+1.0 - Ýlk Sürüm
+
+Daha Fazlasý için lütfen sitelerimi ziyaret edin: www.soulsmasher.com, www.soulsmasher.net
