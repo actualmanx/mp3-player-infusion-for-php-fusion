@@ -1,6 +1,8 @@
-Note: This infusion is last updated on 2010, and I'm posting to GitHub as-is. Most components are out of date.
+Note: This infusion's components are last updated on 2010, and I'm posting to GitHub as-is. Most components are out of date.
+I also fixed a possible Injection attempt which was caused from Uploadify on 2013.08.27
 If you feel like using this feel free to make push request(s), I'll gladly consider them.
 
+-------------------------------------
 Advanced Mp3 Player Panel
 Version 2.2
 
