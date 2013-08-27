@@ -1,12 +1,12 @@
 <?php
 /*-------------------------------------------------------+
 | PHP-Fusion Content Management System
-| Copyright © 2002 - 2009 Nick Jones
+| Copyright ï¿½ 2002 - 2009 Nick Jones
 | http://www.php-fusion.co.uk/
 +--------------------------------------------------------+
 | Filename: mp3player_admin.php
 | CVS Version: 2.1
-| Author: Arda Kýlýçdaðý (SoulSmasher)
+| Author: Arda Kï¿½lï¿½ï¿½daï¿½ï¿½ (SoulSmasher)
 | Web: http://www.soulsmasher.net, www.soulsmasher.com
 +--------------------------------------------------------+
 | This program is released as free software under the
@@ -122,7 +122,8 @@ $remoteformaction="remotemp3add";//default remote form action
 //if mp3 is uploaded via old method, (if javascript is closed old html form appears)
 if(isset($_FILES['file'])) {
 	if(!empty($_FILES['file']['name']) && is_uploaded_file($_FILES['file']['tmp_name'])) {
-		if ($_FILES['file']['type'] == "audio/mpeg" || strtolower(substr($_FILES['file']['name'],-4))==".mp3") {
+		$valid_mimetypes = array('audio/mpeg','audio/mpg','audio/mpeg3','audio/mp3');
+		if (in_array($_FILES['Filedata']['type'],$valid_min_array($_FILES['Filedata']['type'],$valid_mimetypes)imetypes) && strtolower(substr($_FILES['file']['name'],-4))==".mp3") {
 			if ($_FILES['file']['size'] > $settings['maxfilesize']) {
 				$filename = validate_filename_old($_FILES['file']['name']);
 				$newfile =  INFUSIONS."mp3player_panel/songs/".$filename;
@@ -197,9 +198,9 @@ if (isset($_POST['settings'])) {
 $width=isnum($_POST['width'])?$_POST['width']:$mp3settings['width'];
 $height=isnum($_POST['height'])?$_POST['height']:$mp3settings['height'];
 $maxfilesize=isnum($_POST['maxfilesize'])?$_POST['maxfilesize']:$mp3settings['maxfilesize'];
-$backcolor=preg_match("/^[0-9A-F]{6}$/i", $_POST['backcolor'])?$_POST['backcolor']:$mp3settings['backcolor']; //for extra security - ekstra güvenlik için
-$frontcolor=preg_match("/^[0-9A-F]{6}$/i", $_POST['frontcolor'])?$_POST['frontcolor']:$mp3settings['frontcolor']; //for extra security - ekstra güvenlik için
-$lightcolor=preg_match("/^[0-9A-F]{6}$/i", $_POST['lightcolor'])?$_POST['lightcolor']:$mp3settings['lightcolor']; //for extra security - ekstra güvenlik için
+$backcolor=preg_match("/^[0-9A-F]{6}$/i", $_POST['backcolor'])?$_POST['backcolor']:$mp3settings['backcolor']; //for extra security - ekstra gï¿½venlik iï¿½in
+$frontcolor=preg_match("/^[0-9A-F]{6}$/i", $_POST['frontcolor'])?$_POST['frontcolor']:$mp3settings['frontcolor']; //for extra security - ekstra gï¿½venlik iï¿½in
+$lightcolor=preg_match("/^[0-9A-F]{6}$/i", $_POST['lightcolor'])?$_POST['lightcolor']:$mp3settings['lightcolor']; //for extra security - ekstra gï¿½venlik iï¿½in
 $player_mode=isnum($_POST['player_mode'])?$_POST['player_mode']:1;
 $player_shuffle=isnum($_POST['player_shuffle'])?$_POST['player_shuffle']:0;
 $player_behaviour=isnum($_POST['player_behaviour'])?$_POST['player_behaviour']:0;
