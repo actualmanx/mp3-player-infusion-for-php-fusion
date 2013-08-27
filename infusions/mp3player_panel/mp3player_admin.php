@@ -123,7 +123,7 @@ $remoteformaction="remotemp3add";//default remote form action
 if(isset($_FILES['file'])) {
 	if(!empty($_FILES['file']['name']) && is_uploaded_file($_FILES['file']['tmp_name'])) {
 		$valid_mimetypes = array('audio/mpeg','audio/mpg','audio/mpeg3','audio/mp3');
-		if (in_array($_FILES['file']['type'],$valid_min_array) && strtolower(substr($_FILES['file']['name'],-4))==".mp3") {
+		if (in_array($_FILES['file']['type'],$valid_mimetypes) && strtolower(substr($_FILES['file']['name'],-4))==".mp3") {
 			if ($_FILES['file']['size'] > $settings['maxfilesize']) {
 				$filename = validate_filename_old($_FILES['file']['name']);
 				$newfile =  INFUSIONS."mp3player_panel/songs/".$filename;
